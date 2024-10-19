@@ -1,8 +1,15 @@
 function add(numbers) {
   if (numbers === "") return 0 // should return 0 if empty string is passed!
 
-  // const numberArray = numbers.split(",").map(num => parseInt(num, 10));
-  const numberArray = numbers.split(/,|\n/).map(num => parseInt(num, 10));
+  let delimiter = /,|\n/; // Default delimiters: comma and newline
+
+  if (numbers.startsWith("//")) {
+      const delimiterEnd = numbers.indexOf("\n");
+      delimiter = new RegExp(numbers.substring(2, delimiterEnd));
+      numbers = numbers.substring(delimiterEnd + 1); // Remove the delimiter section
+  }
+
+  const numberArray = numbers.split(delimiter).map(num => parseInt(num, 10));
   return numberArray.reduce((sum, num) => sum + num, 0);
 
 }
