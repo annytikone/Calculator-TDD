@@ -1,6 +1,8 @@
 function add(number) {
   if (number === "") return 0 // should return 0 if empty string is passed!
-  return parseInt(numbers, 10);
+
+  const numberArray = numbers.split(",").map(num => parseInt(num, 10));
+  return numberArray.reduce((sum, num) => sum + num, 0);
 
 }
 
