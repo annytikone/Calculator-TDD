@@ -10,7 +10,7 @@ This project implements a **String Calculator** based on a popular TDD (Test-Dri
 - **Error handling**: Throws an error if the input contains negative numbers and lists all negative numbers in the error message.
 - **Ignores non-numeric values**: Non-numeric values are ignored during the sum calculation.
 
-## Features
+## Installation
  ```
 git clone https://github.com/yourusername/string-calculator.git
 cd string-calculator
